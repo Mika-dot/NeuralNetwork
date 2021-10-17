@@ -97,3 +97,7 @@ k(2) = m * r
 where is the number of neurons in the first hidden layer;
 
   - the number of neurons in the second hidden layer.
+
+
+
+https://qna.habr.com/q/1061692
