@@ -58,8 +58,6 @@ Output of neural network readings on the training sample
                 Vector output = network.Forward(X[i], selector);
                 Console.WriteLine("X: {0} {1}, Y: {2} {3} {4}, output: {5} {6} {7}", X[i][0], X[i][1], Y[i][0], Y[i][1], Y[i][2], output[0], output[1], output[2]);
             }
-
-            Console.ReadKey();
 ```         
             
 #### Additionally           
