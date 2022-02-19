@@ -1,7 +1,7 @@
 # NeuralNetworkV2
 The neural network is more selective. 
 
-this way you can create input data on the first layer
+This way you can create input data on the first layer
  ```CSharp
             Vector[] X = {
             new Vector(0, 0),
@@ -11,7 +11,7 @@ this way you can create input data on the first layer
             };
 ```
 
-this is the output data for the learning process
+This is the output data for the learning process
 ```CSharp
             // массив выходных обучающих векторов
             Vector[] Y = {
@@ -27,7 +27,7 @@ Thus, the number of layers and the number of neurons in the layer are entered
             Network network = new Network(new int[] { 2, 4, 3 });
 ```
 
-characteristics necessary for training a neural network
+Characteristics necessary for training a neural network
 ```CSharp
             double alpha = 0.5;
             double eps = 1e-4;
