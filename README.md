@@ -1,14 +1,18 @@
 # NeuralNetworkV2
 The neural network is more selective. 
-An example of working with code.
 
+this way you can create input data on the first layer
+ <
             Vector[] X = {
             new Vector(0, 0),
             new Vector(0, 1),
             new Vector(1, 0),
             new Vector(1, 1)
             };
+ >
 
+this is the output data for the learning process
+<
             // массив выходных обучающих векторов
             Vector[] Y = {
             new Vector(0.0, 0.0, 0.0), // 0 ^ 0 = 0
@@ -16,18 +20,22 @@ An example of working with code.
             new Vector(1.0, 0.0, 1.0), // 1 ^ 0 = 1
             new Vector(0.0, 0.0, 0.0) // 1 ^ 1 = 0
             };
+>  
             
-            
-            
+Thus, the number of layers and the number of neurons in the layer are entered
+<
             Network network = new Network(new int[] { 2, 4, 3 });
+>
 
+characteristics necessary for training a neural network
+<
             double alpha = 0.5;
             double eps = 1e-4;
             int selector = 0;
+>
 
-            
-            //network.InputLayers(); // ввод нейрона
-
+Neural network training algorithm
+<
             double error; // ошибка эпохи
             do
             {
@@ -41,9 +49,10 @@ An example of working with code.
                 }
                 Console.WriteLine("error: {0}", error); // выводим в консоль номер эпохи и величину ошибку
             } while (error > eps);
-
-            network.OutputLayers(); // вывод нейронов
-
+>
+          
+Output of neural network readings on the training sample
+<
             for (int i = 0; i < X.GetLength(0); i++)
             {
                 Vector output = network.Forward(X[i], selector);
@@ -51,8 +60,24 @@ An example of working with code.
             }
 
             Console.ReadKey();
+>           
             
+#### Additionally           
             
+If there is a file with neural network weights, then it can be loaded with this command
+<
+       network.InputLayers(); // ввод нейрона
+>
+Save the state of the scales is done by such a command
+<
+        network.OutputLayers(); // вывод нейронов
+>      
+            
+---
+### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
+##### [book for beginners](https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing)
+
+          
 There is no information about the choice of the number of layers and neurons, but briefly about the rules that I use.
 
 | Number of hidden layers | Result |
@@ -97,7 +122,3 @@ k(2) = m * r
 where is the number of neurons in the first hidden layer;
 
   - the number of neurons in the second hidden layer.
-
-https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing
-
-https://qna.habr.com/q/1061692
