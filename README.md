@@ -98,6 +98,6 @@ where is the number of neurons in the first hidden layer;
 
   - the number of neurons in the second hidden layer.
 
-
+https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing
 
 https://qna.habr.com/q/1061692
