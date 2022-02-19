@@ -2,17 +2,17 @@
 The neural network is more selective. 
 
 this way you can create input data on the first layer
- <
+ ```CSharp
             Vector[] X = {
             new Vector(0, 0),
             new Vector(0, 1),
             new Vector(1, 0),
             new Vector(1, 1)
             };
- >
+```
 
 this is the output data for the learning process
-<
+```CSharp
             // массив выходных обучающих векторов
             Vector[] Y = {
             new Vector(0.0, 0.0, 0.0), // 0 ^ 0 = 0
@@ -20,22 +20,22 @@ this is the output data for the learning process
             new Vector(1.0, 0.0, 1.0), // 1 ^ 0 = 1
             new Vector(0.0, 0.0, 0.0) // 1 ^ 1 = 0
             };
->  
+```  
             
 Thus, the number of layers and the number of neurons in the layer are entered
-<
+```CSharp
             Network network = new Network(new int[] { 2, 4, 3 });
->
+```
 
 characteristics necessary for training a neural network
-<
+```CSharp
             double alpha = 0.5;
             double eps = 1e-4;
             int selector = 0;
->
+```
 
 Neural network training algorithm
-<
+```CSharp
             double error; // ошибка эпохи
             do
             {
@@ -49,10 +49,10 @@ Neural network training algorithm
                 }
                 Console.WriteLine("error: {0}", error); // выводим в консоль номер эпохи и величину ошибку
             } while (error > eps);
->
+```
           
 Output of neural network readings on the training sample
-<
+```CSharp
             for (int i = 0; i < X.GetLength(0); i++)
             {
                 Vector output = network.Forward(X[i], selector);
@@ -60,18 +60,18 @@ Output of neural network readings on the training sample
             }
 
             Console.ReadKey();
->           
+```         
             
 #### Additionally           
             
 If there is a file with neural network weights, then it can be loaded with this command
-<
+```CSharp
        network.InputLayers(); // ввод нейрона
->
+```
 Save the state of the scales is done by such a command
-<
+```CSharp
         network.OutputLayers(); // вывод нейронов
->      
+```     
             
 ---
 ### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
