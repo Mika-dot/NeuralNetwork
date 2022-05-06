@@ -3,7 +3,7 @@ using System.IO;
 
 namespace NeuralNetworkV2
 {
-    class Network
+    public class Network
     {
         struct LayerT
         {
