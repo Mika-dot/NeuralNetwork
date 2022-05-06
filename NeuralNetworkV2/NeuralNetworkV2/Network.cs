@@ -199,7 +199,7 @@ namespace NeuralNetworkV2
             set { v[i][j] = value; } // изменение значения
         }
     }
-    class Vector
+    public class Vector
     {
         public double[] v; // значения вектора
         public int n; // длина вектора
