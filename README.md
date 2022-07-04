@@ -1,50 +1,102 @@
-# Intelligence
-     
-### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
-##### [book for beginners](https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing)
+# convolution
 
-          
-There is no information about the choice of the number of layers and neurons, but briefly about the rules that I use.
+```c#
+ ConvolutionPictures convolution = new ConvolutionPictures();
 
-| Number of hidden layers | Result |
+            int[,] picture = convolution.ImageMatrix("C:\\Users\\akimp\\OneDrive\\Рабочий стол\\1.png");
 
-  0 - Only able to represent linear separable functions or solutions.
+            int[,] ConvolutionOneLayer = convolution.NeuronConvolution(picture, new int[] { 5, 0 }, new int[,] { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 }, });
+```
 
-  1 - can approximate any function that contains continuous mapping
-from one finite space to another.
+## Пример использование свертки -> создание CNN. ##
 
-  2 - can represent an arbitrary decision boundary with arbitrary precision
-with rational activation functions and can approximate any smooth
-display with any precision.
 
----
+```c#
+ConvolutionPictures convolution = new ConvolutionPictures();
+            string way = "C:\\Users\\akimp\\OneDrive\\Рабочий стол\\data\\";
+            int namber = Directory.GetDirectories(way).Length;
+            int namber1 = 0;
+            for (int i = 1; i < namber + 1; i++)
+            {
+                namber1 += Directory.GetFiles(way + i + "\\").Where(x => x.EndsWith("bmp") || x.EndsWith("jpg") || x.EndsWith("png")).Count();
+            }
 
-There are many practical methods for determining the correct number of neurons to use in hidden layers, such as the following:
+            Vector[] X = new Vector[namber1];
+            Vector[] Y = new Vector[namber1];
 
-The number of hidden neurons must be between the size of the input layer and the size of the output layer.
-The number of hidden neurons should be 2/3 the size of the input layer plus the size of the output layer.
-The number of hidden neurons must be less than twice the size of the input layer.
+            int nem = 0;
+            int nem2 = 0;
+            int min = int.MinValue;
 
----
+            for (int i = 1; i < namber + 1; i++)
+            {
+                int chislofailov = Directory.GetFiles(way + i + "\\").Where(x => x.EndsWith("bmp") || x.EndsWith("jpg") || x.EndsWith("png")).Count();
 
-However, there are heuristic rules for choosing the number of neurons in hidden layers. One of these rules is the geometric pyramid rule. According to this rule, the number of neurons in the hidden layer in a 3-layer perceptron is calculated by the following formula:
+                for (int j = 1; j < chislofailov+1; j++)
+                {
+                    int[,] picture1 = transformation.ImageMatrix(way + i + "\\" + i + " (" + j + ").jpg");
 
-K = sqrt(m * n)
+                    int[,] ConvolutionOneLayer1 = convolution.NeuronConvolution(picture1, new int[] { 10, 0 }, new int[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 }, });
 
-where k is the number of neurons in the hidden layer,
+                    int[,] ConvolutionOneLayer2 = convolution.NeuronConvolution(ConvolutionOneLayer1, new int[] { 4, 0 }, new int[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 }, });
 
-n is the number of neurons in the input layer;
 
-m is the number of neurons in the output layer.
+                    X[nem] = new Vector(transformation.Vector(ConvolutionOneLayer2));
+                    Y[nem] = new Vector(transformation.VectoroOutput(i, namber));
 
----
+                    nem++;
 
-For a 4-layer perceptron, the number of neurons is somewhat more complicated to calculate:
+                    if (min < transformation.Vector(ConvolutionOneLayer2).Length)
+                    {
+                        min = transformation.Vector(ConvolutionOneLayer2).Length;
+                        nem2 = min;
+                    }
 
-r = pow( n \ m , 1 \ 3)
-k(1) = m * pow( r , 2)
-k(2) = m * r
+                    Console.WriteLine(nem + " " + i + " " + j);
+                }
+            }
+  
+            Network network = new Network(new int[] { nem2, 400, 300, 100, 50, namber });
 
-where is the number of neurons in the first hidden layer;
+            double alpha = 0.9;
+            double eps = 1e-10;
+            int selector = 0;
+            int output = 10;
 
-  - the number of neurons in the second hidden layer.
+            int indextIR = 0; // записей
+            int iteration = 0; // вывод при этирации
+            double error; // ошибка эпохи
+
+            network.InputLayers(); // ввод нейрона
+
+            do
+            {
+                error = 0; // обнуляем ошибку
+                Random rand = new Random();
+                for (int i = 0; i < X.Length; i++)
+                {
+                    int j = rand.Next(0, X.Length);
+                    network.Forward(X[j], selector); // прямое распространение сигнала
+                    network.Backward(Y[j], ref error); // обратное распространение ошибки
+                    network.UpdateWeights(alpha); // обновление весовых коэффициентов
+                }
+
+                iteration++;
+
+                Console.SetCursorPosition(1, 0);
+                Console.WriteLine("error: {0}", error); // выводим в консоль номер эпохи и величину ошибку
+                Console.WriteLine((iteration * 100) / output + "%");
+                Console.WriteLine(indextIR + " кол. этир.");
+
+                if (iteration == output)
+                {
+                    network.OutputLayers(); // сохранение нейронов
+                    indextIR++;
+                    iteration = 0;
+                }
+
+            } while (error > eps);
+
+            Console.ReadKey();
+            
+```
