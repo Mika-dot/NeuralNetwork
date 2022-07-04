@@ -105,8 +105,7 @@ double[,] w23 = new double[4, 2];
 
 Neural network training algorithm
 ```CSharp
-for (int i = 0; i < 100000; i++)
-{
+
     Console.WriteLine(i);
     for (int j = 0; j < test_questions.GetLength(0); j++)
     {
@@ -125,7 +124,6 @@ for (int i = 0; i < 100000; i++)
         Network.backWards(no, w01, n1, k);
     }
 
-}
 ```
           
 Output of neural network readings on the training sample
