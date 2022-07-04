@@ -15,7 +15,7 @@ double[,] test_questions = new double[,]
             { 0, 1, 0, 0, 1, 0, 1, 1, 1 },
             { 0, 0, 0, 0, 0, 0, 1, 1, 1 },
             { 1, 1, 1, 1, 0, 0, 1, 0, 0 },
-            { 0, 1, 0, 1, 1, 1, 0, 1, 0 },
+             { 0, 1, 0, 1, 1, 1, 0, 1, 0 },
             { 0, 0, 1, 0, 0, 1, 1, 1, 1 },
             { 1, 0, 0, 1, 0, 0, 1, 0, 0 },
             { 1, 1, 1, 0, 1, 0, 0, 1, 0 },
@@ -23,6 +23,7 @@ double[,] test_questions = new double[,]
             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 ```
+
 
 This is the output data for the learning process
 ```CSharp
@@ -47,6 +48,14 @@ double[,] test_answers = new double[,]
 };
 ```  
       
+question
+|0|1|0|
+|1|1|1|
+|0|1|1|
+
+answer
+|1|1|
+
 ---
 
       
