@@ -49,12 +49,14 @@ double[,] test_answers = new double[,]
 ```  
       
 question
+.|.|.
 -|-|-
 0|1|0
 1|1|1
 0|1|1
 
 answer
+.|.
 -|-
 1|1
 
