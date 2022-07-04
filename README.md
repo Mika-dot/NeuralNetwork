@@ -1,10 +1,8 @@
 # Intelligence
 
-It is better to look for training datasets here.
+It is better to look for training datasets [here.]([https://qna.habr.com/q/1061692](https://tproger.ru/translations/the-best-datasets-for-machine-learning-and-data-science/))
 > Most networks don't have a wrapper to represent the data.
 
-https://tproger.ru/translations/the-best-datasets-for-machine-learning-and-data-science/
-     
 ### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
 ##### [book for beginners](https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing)
 
@@ -61,6 +59,7 @@ where is the number of neurons in the first hidden layer;
 
 Training datasets can be taken from these sites.
 
-https://visualdata.io/
+[Datasets one](https://visualdata.io/)
 
-https://www.kaggle.com/
+[Datasets two](https://www.kaggle.com/)
+
