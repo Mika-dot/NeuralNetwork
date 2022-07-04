@@ -48,3 +48,14 @@ k(2) = m * r
 where is the number of neurons in the first hidden layer;
 
   - the number of neurons in the second hidden layer.
+  
+  
+---
+
+# CNN
+
+Training datasets can be taken from these sites.
+
+https://visualdata.io/
+
+https://www.kaggle.com/
