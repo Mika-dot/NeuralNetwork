@@ -1,6 +1,6 @@
 # Intelligence
 
-It is better to look for training datasets [here.]([https://qna.habr.com/q/1061692](https://tproger.ru/translations/the-best-datasets-for-machine-learning-and-data-science/))
+It is better to look for training datasets [here.](https://tproger.ru/translations/the-best-datasets-for-machine-learning-and-data-science/)
 > Most networks don't have a wrapper to represent the data.
 
 ### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
