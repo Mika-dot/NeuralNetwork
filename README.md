@@ -47,7 +47,8 @@ double[,] test_answers = new double[,]
 };
 ```  
       
-     --- 
+---
+
       
 This creates the number of layers in the neural network
 > [ number of neurons, necessarily 2 ]
@@ -87,7 +88,7 @@ double[,] w12 = new double[5, 3];
 double[,] w23 = new double[4, 2];
 ```
 
---- 
+---
 
 Neural network training algorithm
 ```CSharp
