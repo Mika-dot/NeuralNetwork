@@ -48,7 +48,7 @@ double[,] test_answers = new double[,]
 ```  
             
 This creates the number of layers in the neural network
->>> [ number of neurons, necessarily 2 ]
+> [ number of neurons, necessarily 2 ]
 ```CSharp
 double[,] no = new double[10, 2];// нулевой слой        
 
@@ -60,7 +60,7 @@ double[,] n3 = new double[2, 2];// третий слой
 ```
 
 Creating a training layer, something like a reverse neural network error
->>> [ number of neurons on the last layers ]
+> [ number of neurons on the last layers ]
 ```CSharp
 double[,] idl = new double[2, 1];// нужно получить
 ```
@@ -78,7 +78,7 @@ Network.fillW(w23);
 ```
 
 Necessary requirement for randomization of layer weights
->>> [ number of neutrons per layer, the number of neutrons in the next layers - 1 ]
+> [ number of neutrons per layer, the number of neutrons in the next layers - 1 ]
 ```CSharp
 double[,] w01 = new double[10, 4];
 double[,] w12 = new double[5, 3];
