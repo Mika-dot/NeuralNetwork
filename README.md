@@ -1,17 +1,5 @@
 # Intelligence
      
-#### Additionally           
-            
-If there is a file with neural network weights, then it can be loaded with this command
-```CSharp
-       network.InputLayers(); // ввод нейрона
-```
-Save the state of the scales is done by such a command
-```CSharp
-        network.OutputLayers(); // вывод нейронов
-```     
-            
----
 ### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
 ##### [book for beginners](https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing)
 
