@@ -1,18 +1,18 @@
 # convolution
 
 ```c#
- ConvolutionPictures convolution = new ConvolutionPictures();
+ Network convolution = new Network();
 
             int[,] picture = convolution.ImageMatrix("C:\\Users\\akimp\\OneDrive\\Рабочий стол\\1.png");
 
             int[,] ConvolutionOneLayer = convolution.NeuronConvolution(picture, new int[] { 5, 0 }, new int[,] { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 }, });
 ```
 
-## Пример использование свертки -> создание CNN. ##
+## An example of using convolution -> creating a CNN. ##
 
 
 ```c#
-ConvolutionPictures convolution = new ConvolutionPictures();
+Network convolution = new Network();
             string way = "C:\\Users\\akimp\\OneDrive\\Рабочий стол\\data\\";
             int namber = Directory.GetDirectories(way).Length;
             int namber1 = 0;
