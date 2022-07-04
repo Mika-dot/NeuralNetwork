@@ -1,4 +1,4 @@
-# NeuralNetworkV2
+# NeuralNetworkV1
 The neural network is more selective. 
 
 This way you can create input data on the first layer
