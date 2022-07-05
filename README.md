@@ -54,11 +54,11 @@ output = neuralnetwork.FeedForward(trainingData[3]);
             
 If there is a file with neural network weights, then it can be loaded with this command
 ```CSharp
-       network.InputLayers(); // ввод нейрона
+neuralnetwork.InputLayers(); // ввод нейрона
 ```
 Save the state of the scales is done by such a command
 ```CSharp
-        network.OutputLayers(); // вывод нейронов
+neuralnetwork.OutputLayers(); // вывод нейронов
 ``` 
             
 
