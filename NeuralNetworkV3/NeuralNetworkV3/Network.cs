@@ -257,6 +257,40 @@
                 }
             }
         }
+
+        private void InputLayers(string file)
+        {
+            using (StreamReader sr = new StreamReader(file))
+            {
+                for (int layer = 1; layer < layers.Length; layer++)
+                {
+                    for (int neuron = 0; neuron < neurons[layer].Length; neuron++)
+                    {
+                        for (int weight = 0; weight < weights[layer][neuron].Length; weight++)
+                        {
+                            weights[layer][neuron][weight] = Convert.ToDouble(sr.ReadLine());
+                        }
+                    }
+                }
+            }
+        }
+        public void OutputLayers(string file)
+        {
+            using (StreamWriter sw = new StreamWriter(file))
+            {
+                for (int layer = 1; layer < layers.Length; layer++)
+                {
+                    for (int neuron = 0; neuron < neurons[layer].Length; neuron++)
+                    {
+                        for (int weight = 0; weight < weights[layer][neuron].Length; weight++)
+                        {
+                            sw.WriteLine(weights[layer][neuron][weight]);
+                        }
+                    }
+                }
+            }
+        }
+
         public double Calculate_dZdW(int layer, int neuron, int weight)
         {
             return neurons[layer - 1][weight];
