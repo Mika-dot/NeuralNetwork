@@ -52,3 +52,33 @@ When you need to complete the work, then call this from the code:
 ```c#
             model.Dispose();
 ```
+
+## Full usage code
+
+```c#
+                        var modelConfig = new BertModelConfiguration()
+            {
+                VocabularyFile = "C:\\Users\\...\\Model\\vocab.txt",
+                ModelPath = "C:\\Users\\akimp\\...\\Model\\bertsquad-10.onnx"
+            };
+
+            var model = new BertModel(modelConfig);
+            model.Initialize();
+
+
+
+            var (tokens, probability) = model.Predict(
+                "One day, a strange event happened in a small mountain village. For several nights, the locals heard mysterious sounds from the forest that no one could explain. They were frightened and found countless sounds, and decided what was really going on. One of the villagers, young and brave Alexander, decided to gather a group of people and find the source of the mysterious sounds. Together with their friends, they set off on their journey, unaware of the secrets to be uncovered. While exploring, the group discovered a long-abandoned cave where, officially, no one has set foot in years. Boldly entering, they discovered a hidden vault full of sealed chests. Carried away by curiosity, they began to pick locks and open chests. In one of the chests they found a universal secret. This village once had a territorial affiliation between two mysterious peoples. The mysterious sounds that were heard were recreated by the same formula that arose in the forest a year ago.",
+                "What did the group discover in the long-abandoned cave where they went to explore the forest?");
+
+            System.Console.WriteLine(JsonSerializer.Serialize(new
+            {
+                Probability = probability,
+                Tokens = tokens
+            }));
+
+
+            model.Dispose();
+```
+
+> Do not forget to add a link to the project and / or library and download the model to the folder
