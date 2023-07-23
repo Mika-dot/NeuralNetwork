@@ -17,3 +17,5 @@ Usage is simple and consists of one method. Just instantiate the class and use t
                 Console.WriteLine(value);
             }
 ```
+
+> The vector is always 150 long
