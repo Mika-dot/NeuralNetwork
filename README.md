@@ -22,3 +22,11 @@ How did you finish the visualization of the use.
 ```c#
            gpt.GptQuit();
 ```
+
+---
+
+You can use search
+```c#
+           Search search = new Search();
+            string[] url = search.SearchAllDuckduckgo("hello", 10);
+```
