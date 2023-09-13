@@ -1,64 +1,43 @@
-# NeuralNetworkV3
-The neural network is more selective. 
+# RandomForest
+Random forest is a commonly-used machine learning algorithm trademarked by Leo Breiman and Adele Cutler
 
-This way you can create input data on the first layer
+Example data for classification
  ```CSharp
-double[][] trainingData = new double[][]
-{
-                new double[] { 0, 0},
-                new double[] { 0, 1},
-                new double[] { 1, 0},
-                new double[] { 1, 1},
-};
+            List<double[]> features = new List<double[]>()
+            {
+                new double[] { 1, 2, 3 },
+                new double[] { 4, 5, 6 },
+                new double[] { 7, 8, 9 },
+                new double[] { 10, 11, 12 },
+                new double[] { 13, 14, 15 },
+                new double[] { 16, 17, 18 }
+            };
 ```
 
-This is the output data for the learning process
+Example of qualification output data
 ```CSharp
-double[][] trainingLabels = new double[][]
-{
-                new double[] { 0.0, 0.0, 0.0 },
-                new double[] { 1.0, 0.0, 1.0 },
-                new double[] { 1.0, 0.0, 1.0 },
-                new double[] { 0.0, 0.0, 0.0 }
-};
+List<int> labels = new List<int>() { 0, 0, 1, 1, 2, 2 };
 ```  
    
 ---
 
-Thus, the number of layers and the number of neurons in the layer are entered
+Model training
 ```CSharp
-int[] layerDimensions = new int[] { trainingData[0].Length, 3, 3, trainingLabels[0].Length };
-neuralnetwork = new Network(layerDimensions);
+            RandomForest randomForest = new RandomForest();
+            randomForest.Train(features, labels);
 ```
 
 ---
 
-Neural network training algorithm
+Using the model
 ```CSharp
-    for (int i = 0; i < 4; i++)
-    {
-        neuralnetwork.TrainEpoch(trainingData[i], trainingLabels[i]);
-    }
+            double[] testFeature = new double[] { 7, 8, 9 };
+            int predictedLabel = randomForest.Predict(testFeature);
 ```
-          
-Output of neural network readings on the training sample
-```CSharp
-double[] output;
-output = neuralnetwork.FeedForward(trainingData[0]);
-output = neuralnetwork.FeedForward(trainingData[1]);
-output = neuralnetwork.FeedForward(trainingData[2]);
-output = neuralnetwork.FeedForward(trainingData[3]);
-```         
+                 
          
 #### Additionally           
             
-If there is a file with neural network weights, then it can be loaded with this command
-```CSharp
-neuralnetwork.InputLayers(); // ввод нейрона
-```
-Save the state of the scales is done by such a command
-```CSharp
-neuralnetwork.OutputLayers(); // вывод нейронов
-``` 
+I didn’t save because I use it extremely rarely (this method)
             
 
