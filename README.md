@@ -1,66 +1,47 @@
 # Intelligence
 
-It is better to look for training datasets [here.](https://tproger.ru/translations/the-best-datasets-for-machine-learning-and-data-science/)
-> Most networks don't have a wrapper to represent the data.
+## Data
 
-### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
-##### [book for beginners](https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing)
+Create an application that will use this model.
+Next, you need to initialize the data in the program code.
 
-          
-There is no information about the choice of the number of layers and neurons, but briefly about the rules that I use.
+You must insert data into this data:
 
-| Number of hidden layers | Result |
+```c#
+List<List<string>> input = new List<List<string>>();
+List<List<string>> output = new List<List<string>>();
+```
 
-  0 - Only able to represent linear separable functions or solutions.
+Initializing the model in code:
 
-  1 - can approximate any function that contains continuous mapping
-from one finite space to another.
+```c#
+         SynonymCoderDecrypt model = new SynonymCoderDecrypt(64, 32, 1, input, output, true);
+```
 
-  2 - can represent an arbitrary decision boundary with arbitrary precision
-with rational activation functions and can approximate any smooth
-display with any precision.
+Learning process in code:
 
----
+```c#
+            Thread mainThread = new Thread(new ThreadStart(Teach));
+            mainThread.Start();
+            void Teach()
+            {
+                ss.Teach(300);
+                ss.Save();
+            }
+```
+>Here, most likely, I messed up somewhere and could have been written more optimally.
 
-There are many practical methods for determining the correct number of neurons to use in hidden layers, such as the following:
+Next, you need to wait some time, you know, so that the model will turn around, specify the time in minutes, and you know that you want the model to be saved:
 
-The number of hidden neurons must be between the size of the input layer and the size of the output layer.
-The number of hidden neurons should be 2/3 the size of the input layer plus the size of the output layer.
-The number of hidden neurons must be less than twice the size of the input layer.
+```c#
+            await Task.Delay(TimeSpan.FromMinutes(0.5));
+            
+            model.Save();
+```
 
----
+Using the model for work:
 
-However, there are heuristic rules for choosing the number of neurons in hidden layers. One of these rules is the geometric pyramid rule. According to this rule, the number of neurons in the hidden layer in a 3-layer perceptron is calculated by the following formula:
-
-K = sqrt(m * n)
-
-where k is the number of neurons in the hidden layer,
-
-n is the number of neurons in the input layer;
-
-m is the number of neurons in the output layer.
-
----
-
-For a 4-layer perceptron, the number of neurons is somewhat more complicated to calculate:
-
-r = pow( n \ m , 1 \ 3)
-k(1) = m * pow( r , 2)
-k(2) = m * r
-
-where is the number of neurons in the first hidden layer;
-
-  - the number of neurons in the second hidden layer.
-  
-  
----
-
-# CNN
-
-Training datasets can be taken from these sites.
-
-[Datasets one](https://visualdata.io/)
-
-[Datasets two](https://www.kaggle.com/)
-
-[Datasets three](https://datasetsearch.research.google.com/)
+```c#
+            string TxtBox = "...,...";
+            var Temp = model.Predict(TxtBox.ToLower().Trim().Split(',').ToList());
+```
