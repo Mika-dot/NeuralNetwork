@@ -323,7 +323,6 @@ namespace Learningtotranslatesequences
                 ix_input = pred;
             }
 
-            return new List<string> { "1.33" };
             return result;
         }
 
