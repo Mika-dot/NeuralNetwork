@@ -1,66 +1,14 @@
-# Intelligence
+# Assignment
 
-It is better to look for training datasets [here.](https://tproger.ru/translations/the-best-datasets-for-machine-learning-and-data-science/)
-> Most networks don't have a wrapper to represent the data.
+I did it according to instructions, temporarily. Then I'll delete the thread.
 
-### [Some recommendations that I found for neural networks on the Internet](https://qna.habr.com/q/1061692)
-##### [book for beginners](https://drive.google.com/file/d/1YxFuQWIst20nH-c4q2x0kfUKTXXC1zH5/view?usp=sharing)
+I decided to use 2 algorithms which, in my opinion, would be better.
 
-          
-There is no information about the choice of the number of layers and neurons, but briefly about the rules that I use.
+* FastForestOva
+* LightGbmRegression
 
-| Number of hidden layers | Result |
+***FastForestOva - Data classification***
 
-  0 - Only able to represent linear separable functions or solutions.
+***LightGbmRegression - data predictions***
 
-  1 - can approximate any function that contains continuous mapping
-from one finite space to another.
-
-  2 - can represent an arbitrary decision boundary with arbitrary precision
-with rational activation functions and can approximate any smooth
-display with any precision.
-
----
-
-There are many practical methods for determining the correct number of neurons to use in hidden layers, such as the following:
-
-The number of hidden neurons must be between the size of the input layer and the size of the output layer.
-The number of hidden neurons should be 2/3 the size of the input layer plus the size of the output layer.
-The number of hidden neurons must be less than twice the size of the input layer.
-
----
-
-However, there are heuristic rules for choosing the number of neurons in hidden layers. One of these rules is the geometric pyramid rule. According to this rule, the number of neurons in the hidden layer in a 3-layer perceptron is calculated by the following formula:
-
-K = sqrt(m * n)
-
-where k is the number of neurons in the hidden layer,
-
-n is the number of neurons in the input layer;
-
-m is the number of neurons in the output layer.
-
----
-
-For a 4-layer perceptron, the number of neurons is somewhat more complicated to calculate:
-
-r = pow( n \ m , 1 \ 3)
-k(1) = m * pow( r , 2)
-k(2) = m * r
-
-where is the number of neurons in the first hidden layer;
-
-  - the number of neurons in the second hidden layer.
-  
-  
----
-
-# CNN
-
-Training datasets can be taken from these sites.
-
-[Datasets one](https://visualdata.io/)
-
-[Datasets two](https://www.kaggle.com/)
-
-[Datasets three](https://datasetsearch.research.google.com/)
+I also tried to make LBFGS but it didn't work
