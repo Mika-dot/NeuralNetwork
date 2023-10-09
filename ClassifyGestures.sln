@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastForestOva_Console", "FastForestOva_Console\FastForestOva_Console.csproj", "{7276A31F-016C-450C-9622-3C89F09E65F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightGbmRegression_Console", "LightGbmRegression_Console\LightGbmRegression_Console.csproj", "{F6A4CFDA-8E5B-4F78-8C37-48394DA8C054}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7276A31F-016C-450C-9622-3C89F09E65F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7276A31F-016C-450C-9622-3C89F09E65F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7276A31F-016C-450C-9622-3C89F09E65F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7276A31F-016C-450C-9622-3C89F09E65F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A4CFDA-8E5B-4F78-8C37-48394DA8C054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A4CFDA-8E5B-4F78-8C37-48394DA8C054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A4CFDA-8E5B-4F78-8C37-48394DA8C054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A4CFDA-8E5B-4F78-8C37-48394DA8C054}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23B11905-B38D-462B-BDD9-A4E5670234DE}
+	EndGlobalSection
+EndGlobal
