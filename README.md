@@ -6,6 +6,9 @@ I decided to use 2 algorithms which, in my opinion, would be better.
 
 * FastForestOva - 0,9119
 * LightGbmRegression - 0,8196
+* Прогнозирования погоды - 0,8583
+* Оценки качества вина - 0,7044
+* Классификация музыкальных треков - 0,7569
 
 ***FastForestOva - Data classification***
 
