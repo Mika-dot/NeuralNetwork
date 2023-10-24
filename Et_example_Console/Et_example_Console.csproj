@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="1.7.1" />
+  </ItemGroup>
+  <ItemGroup Label="Et_example">
+    <None Include="Et_example.consumption.cs">
+      <DependentUpon>Et_example.mbconfig</DependentUpon>
+    </None>
+    <None Include="Et_example.training.cs">
+      <DependentUpon>Et_example.mbconfig</DependentUpon>
+    </None>
+    <None Include="Et_example.zip">
+      <DependentUpon>Et_example.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
