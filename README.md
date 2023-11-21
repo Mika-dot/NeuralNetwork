@@ -9,6 +9,7 @@ I decided to use 2 algorithms which, in my opinion, would be better.
 * Прогнозирования погоды - 0,8583
 * Оценки качества вина - 0,7044
 * Классификация музыкальных треков - 0,7569
+* Построение модели для оценки стоимости недвижимостиЗадание = 0.80
 
 ***FastForestOva - Data classification***
 
