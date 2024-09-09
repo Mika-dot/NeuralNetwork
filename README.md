@@ -1,5 +1,8 @@
 # Intelligence
 
+model https://drive.google.com/file/d/1S1XrSGbEG6gpsRZ7WeAOQe8MOG2v7FO4/view?usp=sharing
+---
+
 RU
 ---
 
