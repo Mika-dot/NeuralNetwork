@@ -1,3 +1,4 @@
+```Sharp
 string pageImage = @"C:\Users\Akim\Downloads\1.png";
 var location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 var tessData = Path.Combine(location, @"tessdata");
@@ -15,3 +16,4 @@ using (var engine = new TesseractEngine(tessData, "eng", EngineMode.LstmOnly))
         }
     }
 }
+```
